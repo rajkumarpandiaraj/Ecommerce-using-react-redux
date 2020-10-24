@@ -17,7 +17,6 @@ body{
 }
 .product-container{
     flex: 0.75;
-    /* padding-bottom: 5rem; */
 }
 .product-container-grid{
     padding: 1.1rem;
@@ -132,10 +131,143 @@ body{
     background-color: rgb(219, 192, 39);
     font-size: 1rem;
 }
+.remove-btn:hover{
+    cursor: pointer;
+}
 .cart-total{
     padding: 1.1rem;
     display: flex;
 }
 .cart-total h2{
     margin-left: auto;
+}
+
+/* ///////////////////////////////////////////// */
+.modal{
+    width: 100vw;
+    max-width: 100%;
+    height: 180vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+}
+.modal-container{
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+    margin-top: 2rem;
+    display: flex;
+    background-color: #fff;
+    padding: 3rem;
+}
+.modal img{
+    width: 400px;
+    height: 500px;
+}
+.modal-description{
+    padding: 2rem;
+}
+.sizes-flex{
+    display: flex;
+}
+.sizes{
+    list-style: none;
+    display: flex;
+    margin-left: 0.5rem;
+}
+.size{
+    margin: 0 0.3rem;
+}
+.home-btn{
+    margin-left: 2rem;
+    color: #fff;
+    background-color: royalblue;
+}
+
+@media(max-width : 1000px){
+    body{
+        background-color: red;
+    }
+    .product-container{
+        flex : 0.6;
+    }
+    .cart-container{
+        flex: 0.4;
+    }
+    .product-container-grid{
+        grid-template-columns:  1fr;
+    }
+    .form{
+        flex : 1
+    }
+    .modal img{
+        width: 40%;
+        height: 60%;
+    }
+}
+@media(max-width : 800px){
+    body{
+        background-color: blue;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .modal-container{
+        flex-direction: column;
+        padding: 1rem;
+
+    }
+    .modal img{
+        width: 40%;
+        height: 50%;
+        margin: 0 auto;
+    }
+    .modal-description{
+        padding: 0.5rem;
+    }
+    .add-cart-btn{
+        padding: 0.5rem 0.7rem;
+        font-size: 0.7rem;
+    }
+    .btn-flex{
+        margin-top: 0.2rem;
+    }
+    .item-description{
+        line-height: 2;
+    }
+}
+@media(max-width : 510px){
+    .modal-container{
+        width: 98vw;
+        height: 98vh;
+        margin-top: 0.5rem;
+    }
+    .nav{
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+    }
+    .product-container .form select{
+        margin-right: 0.8rem;
+    }
+    
+    .modal img{
+        width: 70%;
+        height: 50%;
+        margin: 0 auto;
+    }
+    .sizes-flex{
+        margin: 0.5rem 0;
+    }
+    
+    .home-btn{
+        margin-left: 1rem;
+    }
+    .price{
+        margin: 0 1rem;
+    }
+}
+@media(max-width : 300px){
+    .modal-product-description{
+        display: none;
+    }
 }

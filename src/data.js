@@ -7,7 +7,8 @@ const products = [
     availableSizes: ["X", "L", "XL", "XXL"],
     price: 29.9,
     inCart : false,
-    quantity : 1
+    quantity : 0,
+    total : 0
     },
     {
         _id: "dress2",
@@ -17,7 +18,8 @@ const products = [
         availableSizes: ["X", "M", "L"],
         price: 18.9,
         inCart : false,
-        quantity : 1
+        quantity : 0,
+        total : 0
     },
     {
         _id: "dress3",
@@ -27,7 +29,8 @@ const products = [
         availableSizes: ["X", "M", "L"],
         price: 14.9,
         inCart : false,
-        quantity : 1
+        quantity : 0,
+        total : 0
     },
     {
         _id: "dress4",
@@ -37,7 +40,8 @@ const products = [
         availableSizes: ["XL"],
         price: 25.9,
         inCart : false,
-        quantity : 1
+        quantity : 0,
+        total : 0
     },
     {
         _id: "dress5",
@@ -47,6 +51,8 @@ const products = [
         availableSizes: ["X", "L", "XL"],
         price: 10.9,
         inCart : false,
+        quantity : 0,
+        total : 0
     },
     {
         _id: "dress6",
@@ -56,7 +62,8 @@ const products = [
         availableSizes: ["XL", "XXL"],
         price: 49.9,
         inCart : false,
-        quantity : 1
+        quantity : 0,
+        total : 0
     }
     
 ]

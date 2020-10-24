@@ -10,8 +10,8 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path='/' component={Productcontainer}/>
-          <Route path='/:id' component={Modal}/>
         </Switch>
+        <Modal/>
       </div>
     </Router>
   );

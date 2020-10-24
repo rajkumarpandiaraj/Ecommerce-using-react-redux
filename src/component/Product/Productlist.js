@@ -1,10 +1,10 @@
 import React,{useEffect} from 'react';
 import Product from './Product';
 import { connect } from 'react-redux';
-import { setSizeArr } from '../../Redux/action'
+import { handleOrderByValue, setSizeArr, handleSizeBy } from '../../Redux/action'
 
 function Productlist(props) {
-    const {productArr, sizeArr, setSizeArr} = props;
+    const {productArr, orderByArr, sizeArr, setSizeArr,handleSizeBy, sizeByValue, handleOrderByValue, orderByValue, } = props;
 
     useEffect(() => {
         let tempSizeArr = [];
@@ -15,6 +15,7 @@ function Productlist(props) {
         setSizeArr(sizeTempArr);
 
     }, [productArr, setSizeArr])
+
     return (
         <div className='product-container'>
             <div className='nav'>
@@ -22,7 +23,7 @@ function Productlist(props) {
                 <form className='form'>
                     <div className='form-grp'>
                         <label htmlFor='order'>OrderBy :</label>
-                        <select id='order'>
+                        <select id='order' value={orderByValue} onChange={handleOrderByValue}>
                             <option value='newest'>Newest</option>
                             <option value='lowest'>Lowest</option>
                             <option value='highest'>Highest</option>
@@ -30,7 +31,7 @@ function Productlist(props) {
                     </div>
                     <div className='form-grp'>
                         <label htmlFor='size'>Size :</label>
-                        <select id='size'>
+                        <select id='size' value={sizeByValue} onChange={handleSizeBy}>
                             <option value='ALL'>ALL</option>
                             {
                                 sizeArr.map(size => <option value={size} key={size}>{size}</option>)
@@ -42,7 +43,7 @@ function Productlist(props) {
         <div className='hr'/>
             <div className='product-container-grid'>
                 {
-                    productArr.map(product => <Product key={product._id} product={product}/>)
+                    orderByArr.map(product => <Product key={product._id} product={product}/>)
                 }
             </div>
         </div>
@@ -52,13 +53,18 @@ function Productlist(props) {
 const mapStateToProps = state =>{
     return{
         productArr : state.productArr,
-        sizeArr : state.sizeArr
+        sizeArr : state.sizeArr,
+        orderByValue : state.orderByValue,
+        orderByArr : state.orderByArr,
+        sizeByValue : state.sizeByValue
     }
 }
 
 const mapDispatchToProps = dispatch =>{
     return{
-        setSizeArr : (sizeTempArr) => dispatch(setSizeArr(sizeTempArr))
+        setSizeArr : (sizeTempArr) => dispatch(setSizeArr(sizeTempArr)),
+        handleOrderByValue : (e) => dispatch(handleOrderByValue(e)),
+        handleSizeBy : (e) => dispatch(handleSizeBy(e))
     }
 }
 

@@ -1,2 +1,9 @@
 export const PRODUCT_ARR = 'productArr';
 export const SIZE_ARR = 'sizeArr';
+export const ADD_TO_CART = 'addToCart';
+export const MODAL_PRODUCT = 'modalProduct';
+export const MODAL_CLOSE = 'modalClose';
+export const CALC_TOTAL = 'calcTotal';
+export const REMOVE_FROM_CART = 'removeFromCart';
+export const HANDLE_ORDER_BY = 'handleOrderBy';
+export const HANDLE_SIZE_BY = 'handleSizeBy';
