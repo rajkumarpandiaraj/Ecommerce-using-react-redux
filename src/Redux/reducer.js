@@ -8,6 +8,14 @@ import { MODAL_CLOSE } from './actiontype';
 import {  REMOVE_FROM_CART } from './actiontype';
 import{ HANDLE_ORDER_BY } from './actiontype';
 import{ HANDLE_SIZE_BY } from './actiontype';
+import{ HANDLE_NAME_CHANGE } from './actiontype';
+import{ HANDLE_EMAIL_CHANGE } from './actiontype';
+import{ HANDLE_ADDRESS_CHANGE } from './actiontype';
+import{ HANDLE_PROCEED } from './actiontype';
+import { HANDLE_CONFIRMATION } from './actiontype';
+
+
+
 
 
 
@@ -22,7 +30,11 @@ const initialState ={
     total : 0,
     orderByValue : 'newest',
     orderByArr : data,
-    sizeByValue : 'ALL'
+    sizeByValue : 'ALL',
+    name : '',
+    email :'',
+    address : '',
+    proceed : false
 }
 
 const reducer = (state = initialState, action) =>{
@@ -146,6 +158,40 @@ const reducer = (state = initialState, action) =>{
             return {...state, orderByArr : tempArr,  sizeByValue : payload}
         }
         
+    }
+
+    if(type === HANDLE_NAME_CHANGE){
+        return {...state, name : payload}
+    }
+
+    if(type === HANDLE_EMAIL_CHANGE){
+        return {...state, email : payload}
+    }
+
+    if(type === HANDLE_ADDRESS_CHANGE){
+        return {...state, address : payload}
+    }
+
+
+    if(type === HANDLE_PROCEED){
+        return {...state, proceed : true}
+    }
+
+    if(type === HANDLE_CONFIRMATION){
+        return {...state,
+            productArr : data,
+            sizeArr : [],
+            cartArr : [],
+            modalProduct : {},
+            isModalOpened : false,
+            total : 0,
+            orderByValue : 'newest',
+            orderByArr : data,
+            sizeByValue : 'ALL',
+            name : '',
+            email :'',
+            address : '',
+            proceed : false }
     }
 
     return state

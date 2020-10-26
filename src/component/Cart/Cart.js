@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { calcTotal } from '../../Redux/action';
+import { handleProceed } from '../../Redux/action';
 import Cartitem from './Cartitem';
 import Fade from 'react-reveal/Fade'
+import Formcompo from '../Formcompo';
 
 function Cart(props) {
-    const {cartArr, total, calcTotal} = props;
+    const {cartArr, total, calcTotal, proceed, handleProceed} = props;
     useEffect(() => {
         calcTotal();
     }, [cartArr, calcTotal])
@@ -25,8 +27,11 @@ function Cart(props) {
             {
                 cartArr.length !== 0 &&  <Fade left><div className='cart-total'>
                                         <h2>Total : $ {total}</h2>
-                                        <button className='proceed-btn add-cart-btn'>Proceed</button>
+                                        <button className='proceed-btn add-cart-btn' onClick={handleProceed}>Proceed</button>
                                     </div></Fade>
+            }
+            {
+                proceed && <Formcompo/>
             }
         </div>
     )
@@ -36,11 +41,13 @@ const mapStateToProps = state =>{
     return {
         cartArr : state.cartArr,
         total : state.total,
+        proceed : state.proceed
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        calcTotal : () => dispatch(calcTotal())
+        calcTotal : () => dispatch(calcTotal()),
+        handleProceed : () => dispatch(handleProceed())
     }
 }
 

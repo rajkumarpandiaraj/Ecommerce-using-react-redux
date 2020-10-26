@@ -96,6 +96,8 @@ body{
 /* Cart styles */
 .cart-container{
     flex: 0.25;
+    padding-bottom: 1rem;
+    /* margin-bottom: 5rem; */
 }
 .cart-nav{
     padding: 0.5rem 1rem;
@@ -142,6 +144,32 @@ body{
     margin-left: auto;
 }
 
+.address-form{
+    /* background-color: red; */
+    padding: 1rem;
+    display : flex;
+    flex-direction: column;
+}
+.form-control{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+}
+.address-form input{
+    width: 95%;
+    margin: 0.1rem 0;
+    padding: 0.2rem 0.4rem;
+    font-size: 1rem;
+}
+.checkout-btn{
+    margin-top: 1rem;
+}
+.check-flex{
+    align-self: flex-end;
+    margin-right: 5%;
+}
+
 /* ///////////////////////////////////////////// */
 .modal{
     width: 100vw;
@@ -183,11 +211,35 @@ body{
     color: #fff;
     background-color: royalblue;
 }
-
+.confirmation-container{
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.confirmation-content{
+    max-width: 450px;
+    min-width: 200px;
+    width: 90%;
+}
+.green{
+    color: green;
+    margin-bottom: 1rem;
+}
+.order{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0.5rem 0;
+}
+.btn{
+    margin: 1rem auto;
+}
 @media(max-width : 1000px){
-    body{
-        background-color: red;
-    }
     .product-container{
         flex : 0.6;
     }
@@ -206,9 +258,6 @@ body{
     }
 }
 @media(max-width : 800px){
-    body{
-        background-color: blue;
-    }
     .container{
         flex-direction: column;
     }

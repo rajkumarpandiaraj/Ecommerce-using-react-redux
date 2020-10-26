@@ -1,4 +1,4 @@
-import { PRODUCT_ARR } from './actiontype';
+import {  PRODUCT_ARR } from './actiontype';
 import { SIZE_ARR } from './actiontype';
 import { ADD_TO_CART } from './actiontype';
 import{ MODAL_PRODUCT } from './actiontype';
@@ -7,6 +7,11 @@ import{ CALC_TOTAL } from './actiontype';
 import{ REMOVE_FROM_CART } from './actiontype';
 import{ HANDLE_ORDER_BY } from './actiontype';
 import{ HANDLE_SIZE_BY } from './actiontype';
+import{ HANDLE_PROCEED } from './actiontype';
+import{ HANDLE_NAME_CHANGE } from './actiontype';
+import{ HANDLE_EMAIL_CHANGE } from './actiontype';
+import{ HANDLE_ADDRESS_CHANGE } from './actiontype';
+import { HANDLE_CONFIRMATION } from './actiontype';
 
 export const productArr = () =>{
     return {
@@ -65,5 +70,36 @@ export const handleSizeBy = (e) =>{
     return {
         type : HANDLE_SIZE_BY,
         payload : e.target.value,
+    }
+}
+
+export const handleNameChange = e => {
+    return {
+        type : HANDLE_NAME_CHANGE,
+        payload : e.target.value
+    }
+}
+export const handleEmailChange = e => {
+    return {
+        type : HANDLE_EMAIL_CHANGE,
+        payload : e.target.value
+    }
+}
+export const handleAddressChange = e => {
+    return {
+        type : HANDLE_ADDRESS_CHANGE,
+        payload : e.target.value
+    }
+}
+
+export const handleProceed = () =>{
+    return {
+        type : HANDLE_PROCEED,
+    }
+}
+
+export const handleConfirmation = () =>{
+    return {
+        type : HANDLE_CONFIRMATION
     }
 }
